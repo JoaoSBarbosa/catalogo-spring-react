@@ -1,6 +1,9 @@
 # Bem-vindo ao Projeto de Catálogo Web de E-Commerce 🚀
 
-![GitHub](https://img.shields.io/github/license/JoaoSBarbosa/catalogo-spring-react?style=flat-square)![GitHub last commit](https://img.shields.io/github/last-commit/JoaoSBarbosa/catalogo-spring-react?style=flat-square)![GitHub contributors](https://img.shields.io/github/contributors/JoaoSBarbosa/catalogo-spring-react?style=flat-square)![GitHub top language](https://img.shields.io/github/languages/top/JoaoSBarbosa/catalogo-spring-react)![GitHub language count](https://img.shields.io/github/languages/count/JoaoSBarbosa/catalogo-spring-react)
+
+  ![GitHub](https://img.shields.io/github/license/JoaoSBarbosa/catalogo-spring-react?style=flat-square)  ![GitHub last commit](https://img.shields.io/github/last-commit/JoaoSBarbosa/catalogo-spring-react?style=flat-square)  ![GitHub contributors](https://img.shields.io/github/contributors/JoaoSBarbosa/catalogo-spring-react?style=flat-square)  ![GitHub top language](https://img.shields.io/github/languages/top/JoaoSBarbosa/catalogo-spring-react)  ![GitHub language count](https://img.shields.io/github/languages/count/JoaoSBarbosa/catalogo-spring-react)
+
+
 
 Este é um projeto de estudo empolgante focado na criação de um catálogo web de e-commerce, utilizando as tecnologias modernas React no front-end e Spring no back-end.
 
