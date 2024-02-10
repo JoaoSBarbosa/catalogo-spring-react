@@ -39,4 +39,5 @@ public class ControllerExceptionHandler {
         error.setPath(httpServletRequest.getRequestURI());
         return ResponseEntity.status(HttpStatus.CONFLICT).body(error);
     }
+
 }
