@@ -1,5 +1,6 @@
 package br.com.jbcatalog.jbcatalog.controllers;
 
+import br.com.jbcatalog.jbcatalog.entities.Product;
 import br.com.jbcatalog.jbcatalog.entities.dto.CategoryDTO;
 import br.com.jbcatalog.jbcatalog.entities.dto.ProductDTO;
 import br.com.jbcatalog.jbcatalog.services.ProductService;
@@ -8,10 +9,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/products")
@@ -29,5 +27,20 @@ public class ProductController {
         PageRequest pageRequest = PageRequest.of(page,linesPerPage, Sort.Direction.valueOf(direction),orderBy);
         Page<ProductDTO> productDTOPage = productService.findAll(pageRequest);
         return ResponseEntity.ok().body(productDTOPage);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ProductDTO> findById(@PathVariable Long id){
+        ProductDTO productDTO = productService.findById(id);
+        return ResponseEntity.ok().body(productDTO);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<ProductDTO> updateEntity(
+            @RequestBody ProductDTO productDTO,
+            @PathVariable Long id
+    ){
+        productDTO = productService.updateRegister(productDTO, id);
+        return ResponseEntity.ok().body(productDTO);
     }
 }
