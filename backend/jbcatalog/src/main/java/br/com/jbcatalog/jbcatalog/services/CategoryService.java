@@ -45,14 +45,15 @@ public class CategoryService {
 
     @Transactional
     public Category delete(Long id) {
-        try {
+        Optional<Category> categoryOptional = categoryRepository.findById(id);
+        if (categoryOptional.isPresent()) {
             Category category = categoryRepository.getReferenceById(id);
             categoryRepository.deleteById(id);
             return null;
-
-        } catch (EntityNotFoundException e) {
-            throw new ControllerNotFoundException("Registro não encontrado através do id informado: " + id + " 🗑️");
+        }else {
+            throw new ControllerNotFoundException("Não foi possivel localizar uma categoria com o código informado"+id);
         }
+
     }
 
     @Transactional

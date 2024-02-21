@@ -1,5 +1,6 @@
 package br.com.jbcatalog.jbcatalog.entities.dto;
 
+import br.com.jbcatalog.jbcatalog.entities.Category;
 import br.com.jbcatalog.jbcatalog.entities.Product;
 
 import java.io.Serializable;
@@ -41,7 +42,7 @@ public class ProductDTO implements Serializable {
         date = entity.getDate();
     }
 
-    public ProductDTO(Product entity, Set<CategoryDTO> categories) {
+    public ProductDTO(Product entity, Set<Category> categories) {
         // Chama o construtor da classe ProductDTO que recebe apenas a entidade Product
         this(entity);
 
@@ -98,8 +99,11 @@ public class ProductDTO implements Serializable {
         this.imgUrl = imgUrl;
     }
 
-    public List<CategoryDTO> getCategoryDTOList() {
+    public List<CategoryDTO> getCategories() {
         return categories;
     }
 
+    public void setCategories(List<CategoryDTO> categories) {
+        this.categories = categories;
+    }
 }
