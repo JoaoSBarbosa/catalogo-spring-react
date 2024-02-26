@@ -2,6 +2,7 @@ package br.com.jbcatalog.jbcatalog.entities.dto;
 
 import br.com.jbcatalog.jbcatalog.entities.Category;
 import br.com.jbcatalog.jbcatalog.entities.Product;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+@Data
 public class ProductDTO implements Serializable {
 
     private Long id;
@@ -20,8 +22,7 @@ public class ProductDTO implements Serializable {
 
     private List<CategoryDTO> categories = new ArrayList<>();
 
-    public ProductDTO() {
-    }
+    public ProductDTO() {}
 
     public ProductDTO(Long id, String name, String description, Double price, String imgUrl,Instant date) {
         this.id = id;
@@ -51,59 +52,4 @@ public class ProductDTO implements Serializable {
         categories.forEach(category -> this.categories.add(new CategoryDTO(category)));
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public Instant getDate() {
-        return date;
-    }
-
-    public void setDate(Instant date) {
-        this.date = date;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public String getImgUrl() {
-        return imgUrl;
-    }
-
-    public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl;
-    }
-
-    public List<CategoryDTO> getCategories() {
-        return categories;
-    }
-
-    public void setCategories(List<CategoryDTO> categories) {
-        this.categories = categories;
-    }
 }

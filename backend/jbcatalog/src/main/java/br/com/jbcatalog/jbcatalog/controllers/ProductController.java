@@ -34,6 +34,11 @@ public class ProductController {
         ProductDTO productDTO = productService.findById(id);
         return ResponseEntity.ok().body(productDTO);
     }
+    @PostMapping
+    public ResponseEntity<ProductDTO> insert(@RequestBody ProductDTO dto){
+        dto = productService.insert(dto);
+        return ResponseEntity.ok().body(dto);
+    }
 
     @PutMapping("/{id}")
     public ResponseEntity<ProductDTO> updateEntity(
@@ -43,6 +48,9 @@ public class ProductController {
         productDTO = productService.updateRegister(productDTO, id);
         return ResponseEntity.ok().body(productDTO);
     }
+
+
+
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id){
