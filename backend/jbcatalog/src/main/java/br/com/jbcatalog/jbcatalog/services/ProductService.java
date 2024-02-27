@@ -11,6 +11,7 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -33,9 +34,9 @@ public class ProductService {
     }
 
     @Transactional(readOnly = true)
-    public Page<ProductDTO> findAll(PageRequest pageRequest) {
+    public Page<ProductDTO> findAll(Pageable pageable) {
         // 1. Busca os produtos paginados do repositório
-        Page<Product> productPage = productRepository.findAll(pageRequest);
+        Page<Product> productPage = productRepository.findAll(pageable);
 
         // 2. Verifica se a página de produtos não está vazia
         if (!productPage.isEmpty()) {

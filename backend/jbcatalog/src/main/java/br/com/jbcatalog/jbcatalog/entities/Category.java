@@ -1,12 +1,14 @@
 package br.com.jbcatalog.jbcatalog.entities;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
 @Entity
+@Data
 @Table(name = "tb_category")
 public class Category implements Serializable {
 
@@ -51,15 +53,4 @@ public class Category implements Serializable {
     }
 
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Category category)) return false;
-        return Objects.equals(id, category.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
 }
